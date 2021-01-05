@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sonic Boom Audio Player</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <!--Font aswesome icons-->
+    <link type="text/css" rel="stylesheet" href="fonts/css/all.min.css" />
+  </head>
+  <body>
+    <div class="main">
+      <p id="logo"><img src="img/logo.png" width="80" height="80" /></p>
+
+      <div class="left">
+        <!--Song image-->
+        <img id="track_image" />
+        <div class="volume">
+          <p id="volume_show">100</p>
+          <i
+            class="fas fa-volume-up"
+            aria-hidden="true"
+            id="volume_icon"
+            onclick="muteSound()"
+          ></i>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="100"
+            onchange="volumeChange()"
+            id="volume"
+          />
+        </div>
+      </div>
+
+      <!--right part-->
+      <div class="right">
+        <div class="show_song_no">
+          <p id="present">1</p>
+          <p>/</p>
+          <p id="total">5</p>
+        </div>
+
+        <!--Song Title-->
+        <p id="title">title.mp3</p>
+        <p id="artist">Artist name</p>
+
+        <div class="middle">
+          <button onclick="previousSong()" id="pre">
+            <i class="fa fa-step-backward" aria-hidden="true"></i>
+          </button>
+          <button onclick="justPlay()" id="play">
+            <i class="fa fa-play" aria-hidden="true"></i>
+          </button>
+          <button onclick="nextSong()" id="next">
+            <i class="fa fa-step-forward" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!--Song duration-->
+        <div class="duration">
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            id="duration_slider"
+            onchange="changeDuration()"
+          />
+        </div>
+        <button id="auto" onclick="autoPlaySwitch()">
+          Auto Play<i class="fas fa-circle-notch" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <!--
+    <footer>Sonic Boom &copy; 2020</footer>
+    -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
